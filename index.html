@@ -211,6 +211,53 @@
                             </div>
                         </div>
                         
+			     <form id="licz"><h4 style="font-family:verdana"><strong>Przelicznik</strong></h4>
+						<ul class="meta"> <li class="icon fa-clock">11:30 13.04.2022</li></ul>
+                                <label>ILOŚĆ <input type="number" id="krypto"> </label><br>
+                                <label>WALUTA
+                                <select id="waluta">
+                                    <option value="monero">Monero</option>
+                                    <option value="litecoin">Litecoin</option>
+                                    <option value= "stellar">Stellar</option>
+                                    <option value= "hedera">Hedera</option>
+                                    <option value= "bittorrent">BitTorrent</option>
+                                    </select></label><br>
+                                <label>EUR<br><div id="naEUR"><span id="EUR"></span></div></label><br>
+ 
+ 
+                                <button type="button" id="guzik">PRZELICZ</button>
+                                </form>
+ 
+                            <script>
+                                var guzik = document.getElementById("guzik");
+                                var przelicz = function() {
+                                    var EUR = document.getElementById("EUR");
+                                    var krypto =document.getElementById("krypto").value;
+                                    var waluta = document.getElementById("waluta").value;
+                                    if (waluta==="monero")
+                                        {
+                                            EUR.innerHTML = krypto*214.61;
+                                        }
+                                    else if (waluta==="litecoin")
+                                        {
+                                            EUR.innerHTML = krypto*98.66;
+                                        }
+                                     else if (waluta==="stellar")
+                                        {
+                                            EUR.innerHTML = krypto*0.179;
+                                        }
+                                     else if (waluta==="hedera")
+                                        {
+                                            EUR.innerHTML = krypto*0.186;
+                                        }
+                                     else if (waluta==="bittorrent")
+                                        {
+                                            EUR.innerHTML = krypto*0.00000171;
+                                        }
+                                };
+                                guzik.addEventListener('click', przelicz);
+ 
+                            </script>
                     </div> <!-- .projects-holder -->
                     </div>
                     <hr>
